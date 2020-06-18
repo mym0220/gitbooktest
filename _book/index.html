@@ -1,0 +1,302 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>介绍 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"azu","repo":"JavaScript-Plugin-Architecture","type":"star","size":"large"},{"user":"azu","type":"follow","width":"230","count":false}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >介绍</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x672C;&#x7535;&#x5B50;&#x4E66;&#x4ECB;&#x7ECD;">&#x672C;&#x7535;&#x5B50;&#x4E66;&#x4ECB;&#x7ECD;</h1>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x672C;&#x5F00;&#x6E90;&#x514D;&#x8D39;&#x7684;&#x7535;&#x5B50;&#x4E66;&#xFF0C;&#x7528;gitbook&#x7F16;&#x5199;&#x3002;</p>
+<h1 id="homebrew-font">homebrew-font</h1>
+<h1 id="installing-ricty-fonts">Installing Ricty fonts</h1>
+<pre><code>$ brew tap sanemat/font
+$ brew install ricty
+# (generate)
+$ cp -f /PATH/TO/RICTY/fonts/Ricty*.ttf ~/Library/Fonts/
+$ fc-cache -vf
+</code></pre><h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="i-get-a-python-error-during-brew-install-fontforge">I get a Python error during <code>brew install fontforge</code></h2>
+<p>If you get an error during <code>brew install fontforge</code>, like below:</p>
+<pre><code>==&gt; Patching
+==&gt; ./bootstrap
+==&gt; ./configure --prefix=/Users/sane/.homebrew/Cellar/fontforge/20141230 --disable-silent-rules --without-x --without-giflib --without-libspiro
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables PYTHON_CFLAGS
+and PYTHON_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+</code></pre><h3 id="quick-fix-work-around">Quick fix (work around)</h3>
+<p>Execute the following:</p>
+<pre><code># Install python before installing fontforge and ricty
+brew install python
+# Then install fontforge and ricty
+brew install ricty
+</code></pre><h3 id="long-help-my-environment">Long help (my environment)</h3>
+<p>I use homebrew of course, but I don&apos;t use homebrew&apos;s python. I use pyenv via anyenv. In the homebrew build script, your <code>PKG_CONFIG_PATH</code> is not used; there is homebrew&apos;s <code>PKG_CONFIG_PATH</code>. You can try this <code>brew sh</code> and <code>printenv | grep PKG_CONFIG_PATH</code>.</p>
+<p>The <a href="https://github.com/fontforge/fontforge/blob/7432f9a102f0f4268c5caabbb4f55d3ac33b0d0d/configure.ac#L217-L230" target="_blank">fontforge configuration script</a> doesn&apos;t detect pyenv&apos;s python (I think, but I&apos;m not famliar with autoconf yet, sorry). I don&apos;t understand why this doesn&apos;t detect the system python (after I execute <code>pyenv global system</code>).</p>
+<p>The following is the debug output of <code>brew install fontforge --verbose --debug</code>:</p>
+<pre><code>detected a homebrew build environment
+./configure: line 18044: /Users/sane/.homebrew/bin/python: No such file or directory
+./configure: line 18045: cd: /../../pkgconfig: No such file or directory
+found python pkg_config information:
+./configure: line 18048: y: command not found
+checking for a Python interpreter with version &gt;= 2.7... python
+checking for python... /Users/sane/.anyenv/envs/pyenv/versions/2.7.6/bin/python
+checking for python version... 2.7
+checking for python platform... darwin
+checking for python script directory... ${prefix}/lib/python2.7/site-packages
+checking for python extension module directory... ${exec_prefix}/lib/python2.7/site-packages
+checking for PYTHON... no
+configure: error: Package requirements (python-&quot;2.7&quot;) were not met:
+
+No package &apos;python-2.7&apos; found
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables PYTHON_CFLAGS
+and PYTHON_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+</code></pre><p>The actual solution is detecting system python here, but I don&apos;t know how to detect this yet.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"介绍","level":"1.1","depth":1,"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["donate","edit-link","github-buttons","livereload"],"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"http://img.xgo-img.com.cn/pics/1841/1840720.jpg","alipayText":"支付宝","button":"打赏","title":"","wechat":"http://img.xgo-img.com.cn/pics/1505/1504570.jpg","wechatText":"微信"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"azu","repo":"JavaScript-Plugin-Architecture","type":"star","size":"large"},{"user":"azu","type":"follow","width":"230","count":false}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/sanemat/homebrew-font/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2020-06-18T08:29:48.570Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-18T11:47:30.713Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

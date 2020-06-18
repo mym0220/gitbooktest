@@ -1,0 +1,36 @@
+﻿{
+ "plugins": ["donate",
+              "edit-link",
+              "github-buttons"
+            
+],
+ "pluginsConfig": {
+        "donate": {
+          "wechat": "http://img.xgo-img.com.cn/pics/1505/1504570.jpg",
+          "alipay": "http://img.xgo-img.com.cn/pics/1841/1840720.jpg",
+          "title": "",
+          "button": "打赏",
+          "alipayText": "支付宝",
+          "wechatText": "微信"
+        },
+        "edit-link": {
+            "base": "https://github.com/sanemat/homebrew-font/edit/master/",
+            "label": "编辑此页"
+        },
+         "github-buttons": {
+      "buttons": [{
+        "user": "azu",
+        "repo": "JavaScript-Plugin-Architecture",
+        "type": "star",
+        "size": "large"
+      }, {
+        "user": "azu",
+        "type": "follow",
+        "width": "230",
+        "count": false
+      }]
+    }
+   }
+
+
+}
